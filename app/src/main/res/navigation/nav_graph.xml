@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.mastomas.comicbookbrowser.fragments.MainFragment"
+        android:label="MainFragment">
+        <action
+            android:id="@+id/action_mainFragment_to_searchFragment"
+            app:destination="@id/searchFragment"
+            app:enterAnim="@anim/slide_in_from_right"
+            app:exitAnim="@anim/slide_out_to_left"
+            app:popEnterAnim="@anim/slide_in_from_left"
+            app:popExitAnim="@anim/slide_out_to_right" />
+        <action
+            android:id="@+id/action_mainFragment_to_characterDetailFragment"
+            app:destination="@id/characterDetailFragment"
+            app:enterAnim="@anim/slide_up_from_bottom"
+            app:popExitAnim="@anim/slide_down_to_bottom" />
+        <action
+            android:id="@+id/action_mainFragment_to_moreInfoFragment"
+            app:destination="@id/moreInfoFragment"
+            app:enterAnim="@anim/slide_in_from_right"
+            app:exitAnim="@anim/slide_out_to_left"
+            app:popEnterAnim="@anim/slide_in_from_left"
+            app:popExitAnim="@anim/slide_out_to_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.mastomas.comicbookbrowser.fragments.SearchFragment"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search">
+        <action
+            android:id="@+id/action_searchFragment_to_characterDetailFragment"
+            app:destination="@id/characterDetailFragment"
+            app:enterAnim="@anim/slide_up_from_bottom"
+            app:popExitAnim="@anim/slide_down_to_bottom" />
+    </fragment>
+    <fragment
+        android:id="@+id/characterDetailFragment"
+        android:name="com.mastomas.comicbookbrowser.fragments.CharacterDetailFragment"
+        android:label="fragment_character_detail"
+        tools:layout="@layout/fragment_character_detail">
+        <argument
+            android:name="characterId"
+            app:argType="integer" />
+        <argument
+            android:name="characterDesc"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="characterName"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="imageUri"
+            app:argType="string"
+            app:nullable="true" />
+        <action
+            android:id="@+id/action_characterDetailFragment_to_comicWebViewFragment"
+            app:destination="@id/comicWebViewFragment"
+            app:enterAnim="@anim/slide_in_from_right"
+            app:exitAnim="@anim/slide_out_to_left"
+            app:popEnterAnim="@anim/slide_in_from_left"
+            app:popExitAnim="@anim/slide_out_to_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/moreInfoFragment"
+        android:name="com.mastomas.comicbookbrowser.fragments.MoreInfoFragment"
+        android:label="MoreInfoFragment" />
+    <fragment
+        android:id="@+id/comicWebViewFragment"
+        android:name="com.mastomas.comicbookbrowser.fragments.ComicWebViewFragment"
+        android:label="ComicWebViewFragment">
+        <argument
+            android:name="comicTitle"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="comicUrl"
+            android:defaultValue='"www.marvel.com"'
+            app:argType="string" />
+    </fragment>
+</navigation>

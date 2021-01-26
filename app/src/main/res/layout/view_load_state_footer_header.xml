@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <include
+        android:id="@+id/loadingView"
+        layout="@layout/view_loading_screen" />
+
+    <TextView
+        android:id="@+id/errorText"
+        style="@style/ItemCardTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autoSizeTextType="uniform"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text="@string/loading_error_message"
+        android:textColor="@color/colorOnBackground" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/errorButton"
+        style="@style/CustomOutlinedButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:foreground="?attr/selectableItemBackgroundBorderless"
+        android:text="@string/loading_error_button" />
+</LinearLayout>

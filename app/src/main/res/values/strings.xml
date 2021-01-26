@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Hero HQ</string>
+    <string name="main_menu_search">Search</string>
+    <string name="detail_menu_close">close</string>
+    <string name="loading_error_message">There was a problem</string>
+    <string name="loading_error_button">Retry</string>
+    <string name="error_screen_message">something went wrong</string>
+    <string name="empty_screen_message">there is nothing here</string>
+    <string name="search_hint">Search</string>
+    <string name="character_appears_in">Appears In:</string>
+    <string name="character_detail_image_description">Thumbnail of character</string>
+    <string name="main_menu_more_info">More Info</string>
+    <string name="legal_text">Data provided by Marvel. © 2021 MARVEL</string>
+</resources>

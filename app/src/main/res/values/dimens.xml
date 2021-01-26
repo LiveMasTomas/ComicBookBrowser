@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="item_card_view_title_size">24sp</dimen>
+    <dimen name="text_margin">16dp</dimen>
+    <dimen name="lottie_view_size">150dp</dimen>
+    <dimen name="toolbar_title_text_size">28sp</dimen>
+    <dimen name="search_view_inner_padding">4dp</dimen>
+    <integer name="nav_slide_time">200</integer>
+</resources>

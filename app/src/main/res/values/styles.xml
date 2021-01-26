@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="ItemCardTitle">
+        <item name="android:gravity">start</item>
+        <item name="android:fontFamily">@font/gothic_a1_bold</item>
+        <item name="android:textSize">@dimen/item_card_view_title_size</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="CharacterDetail">
+        <item name="android:gravity">start</item>
+        <item name="android:fontFamily">@font/gothic_a1_regular</item>
+        <item name="android:textSize">@dimen/item_card_view_title_size</item>
+        <item name="android:textColor">@color/colorOnBackground</item>
+    </style>
+
+    <style name="CustomToolbarLook" parent="Widget.MaterialComponents.Toolbar">
+        <item name="android:textSize">@dimen/toolbar_title_text_size</item>
+        <item name="android:fontFamily">@font/gothic_a1_bold</item>
+    </style>
+
+    <style name="CustomOutlinedButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="strokeColor">@color/colorOnBackground</item>
+        <item name="android:textColor">@color/colorOnBackground</item>
+    </style>
+
+</resources>

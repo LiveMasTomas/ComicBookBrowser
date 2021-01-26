@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="main_red">#9B0000</color>
+    <color name="dark_red">#660000</color>
+    <color name="light_grey">#CCCCCC</color>
+    <color name="black">#000000</color>
+    <color name="light_black">#010101</color>
+    <color name="white">#FFFFFF</color>
+
+    <!-- Colors for themes -->
+    <color name="primary">@color/black</color>
+    <color name="primaryVariant">@color/light_black</color>
+    <color name="colorOnPrimary">@color/white</color>
+    <color name="secondary">@color/main_red</color>
+    <color name="secondaryVariant">@color/dark_red</color>
+    <color name="colorOnSecondary">@color/white</color>
+    <color name="background">@color/primary</color>
+    <color name="colorOnBackground">@color/white</color>
+    <color name="surface">@color/main_red</color>
+    <color name="colorOnSurface">@color/white</color>
+    <color name="logoColor">@color/white</color>
+</resources>
