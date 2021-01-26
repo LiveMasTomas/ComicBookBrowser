@@ -74,7 +74,7 @@ class SearchFragment : Fragment() {
         }
         with(binding) {
             swipeContainer.setOnRefreshListener {
-                adapter.retry()
+                adapter.refresh()
             }
             errorView.retryButton.setOnClickListener {
                 adapter.retry()
