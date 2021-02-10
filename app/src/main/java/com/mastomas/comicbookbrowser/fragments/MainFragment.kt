@@ -19,6 +19,7 @@ import com.mastomas.comicbookbrowser.databinding.FragmentMainBinding
 import com.mastomas.comicbookbrowser.model.MarvelCharacter
 import com.mastomas.comicbookbrowser.util.viewBinding
 import com.mastomas.comicbookbrowser.viewmodel.CharacterViewModel
+import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 /**
@@ -30,7 +31,7 @@ class MainFragment : Fragment() {
 
     //region Variables
     private val binding by viewBinding(FragmentMainBinding::bind)
-    private val viewModel: CharacterViewModel by viewModel()
+    private val viewModel by sharedViewModel<CharacterViewModel>()
     //endregion
 
     //region Override

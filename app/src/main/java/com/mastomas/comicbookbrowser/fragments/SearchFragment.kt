@@ -21,13 +21,14 @@ import com.mastomas.comicbookbrowser.model.MarvelCharacter
 import com.mastomas.comicbookbrowser.util.hideKeyboard
 import com.mastomas.comicbookbrowser.util.viewBinding
 import com.mastomas.comicbookbrowser.viewmodel.CharacterViewModel
+import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class SearchFragment : Fragment() {
 
     //region Variables
     private val binding by viewBinding(FragmentSearchBinding::bind)
-    private val viewModel: CharacterViewModel by viewModel()
+    private val viewModel by sharedViewModel<CharacterViewModel>()
     //endregion
 
     //region Override

@@ -5,11 +5,14 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.mastomas.comicbookbrowser.databinding.ActivityMainBinding
 import com.mastomas.comicbookbrowser.util.viewBinding
+import com.mastomas.comicbookbrowser.viewmodel.CharacterViewModel
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : AppCompatActivity() {
 
     //region Variables
     private val binding by viewBinding(ActivityMainBinding::inflate)
+    private val viewModel by viewModel<CharacterViewModel>()
     //endregion
 
     //region Override

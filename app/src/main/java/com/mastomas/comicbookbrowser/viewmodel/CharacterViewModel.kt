@@ -11,8 +11,8 @@ class CharacterViewModel(private val characterRepository: MarvelCharacterReposit
     /**
      * Get and observe the latest modified characters from the Marvel Api
      */
-    val latestHeroes: LiveData<PagingData<MarvelCharacter>>
-        get() = characterRepository.getLatestCharacters().cachedIn(viewModelScope)
+    val latestHeroes: LiveData<PagingData<MarvelCharacter>> =
+        characterRepository.getLatestCharacters().cachedIn(viewModelScope)
 
     private val currentQuery = MutableLiveData(EMPTY_SEARCH)
     val characters = currentQuery.switchMap {

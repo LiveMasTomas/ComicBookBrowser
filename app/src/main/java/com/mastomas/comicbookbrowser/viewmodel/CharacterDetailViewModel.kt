@@ -10,10 +10,9 @@ class CharacterDetailViewModel(private val repository: MarvelComicRepository) : 
 
     private val currentId = MutableLiveData(EMPTY_SEARCH)
 
-    val comics: LiveData<PagingData<MarvelComic>>
-        get() = currentId.switchMap {
-            repository.getComicsForCharacter(it).cachedIn(viewModelScope)
-        }
+    val comics: LiveData<PagingData<MarvelComic>> = currentId.switchMap {
+        repository.getComicsForCharacter(it).cachedIn(viewModelScope)
+    }
 
     fun getComicsForCharacter(characterId: String) {
         currentId.value = characterId
