@@ -2,7 +2,8 @@
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/background">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/toolBarParent"
@@ -12,10 +13,13 @@
 
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/toolBar"
+            style="@style/Widget.MaterialComponents.Toolbar.Primary"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:paddingHorizontal="18dp"
-            app:navigationIcon="@drawable/ic_arrow_back" />
+            app:contentInsetStartWithNavigation="0dp"
+            app:navigationIcon="@drawable/ic_arrow_back"
+            app:titleMarginEnd="20dp"
+            app:titleTextAppearance="@style/CustomToolbarLook" />
     </com.google.android.material.appbar.AppBarLayout>
 
     <FrameLayout
@@ -34,5 +38,4 @@
             android:id="@+id/loadingView"
             layout="@layout/view_loading_screen" />
     </FrameLayout>
-
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

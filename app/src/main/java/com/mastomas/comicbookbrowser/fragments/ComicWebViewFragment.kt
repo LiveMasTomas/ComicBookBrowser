@@ -15,6 +15,7 @@ import androidx.navigation.fragment.navArgs
 import com.mastomas.comicbookbrowser.R
 import com.mastomas.comicbookbrowser.databinding.FragmentComicWebviewBinding
 import com.mastomas.comicbookbrowser.util.viewBinding
+import timber.log.Timber
 
 class ComicWebViewFragment : Fragment() {
 
@@ -43,14 +44,22 @@ class ComicWebViewFragment : Fragment() {
         val client = object : WebViewClient() {
             override fun onPageStarted(view: WebView?, url: String?, favicon: Bitmap?) {
                 super.onPageStarted(view, url, favicon)
-                binding.loadingView.root.isVisible = true
-                binding.webView.isVisible = false
+                try {
+                    binding.loadingView.root.isVisible = true
+                    binding.webView.isVisible = false
+                } catch (t: Throwable) {
+                    Timber.e(t, "webView error - started")
+                }
             }
 
             override fun onPageFinished(view: WebView?, url: String?) {
                 super.onPageFinished(view, url)
-                binding.loadingView.root.isVisible = false
-                binding.webView.isVisible = true
+                try {
+                    binding.loadingView.root.isVisible = false
+                    binding.webView.isVisible = true
+                } catch (t: Throwable) {
+                    Timber.e(t, "webView error - finished")
+                }
             }
         }
         with(binding.webView) {

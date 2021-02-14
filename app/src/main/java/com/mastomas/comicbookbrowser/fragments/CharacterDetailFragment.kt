@@ -99,16 +99,11 @@ class CharacterDetailFragment : Fragment() {
     }
 
     private fun setupToolbar() {
-        with(binding) {
-            toolBar.setOnMenuItemClickListener {
-                when (it.itemId) {
-                    R.id.close -> {
-                        findNavController().navigateUp()
-                    }
-                    else -> false
-                }
+        with(binding.toolBar) {
+            setNavigationOnClickListener {
+                findNavController().navigateUp()
             }
-            toolBar.title = args.characterName.orEmpty()
+            title = args.characterName.orEmpty()
         }
     }
 
