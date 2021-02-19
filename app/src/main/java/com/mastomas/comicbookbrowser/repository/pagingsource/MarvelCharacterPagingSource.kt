@@ -1,6 +1,7 @@
 package com.mastomas.comicbookbrowser.repository.pagingsource
 
 import androidx.paging.PagingSource
+import androidx.paging.PagingState
 import com.mastomas.comicbookbrowser.model.MarvelCharacter
 import com.mastomas.comicbookbrowser.util.ApiUtils
 import com.mastomas.comicbookbrowser.util.toListOfMarvelCharacters
@@ -40,4 +41,7 @@ class MarvelCharacterPagingSource(
             LoadResult.Error(t)
         }
     }
+
+    override fun getRefreshKey(state: PagingState<Int, MarvelCharacter>): Int? =
+        state.anchorPosition
 }

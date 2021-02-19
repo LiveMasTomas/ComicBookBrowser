@@ -1,6 +1,7 @@
 package com.mastomas.comicbookbrowser.repository.pagingsource
 
 import androidx.paging.PagingSource
+import androidx.paging.PagingState
 import com.mastomas.comicbookbrowser.model.MarvelComic
 import com.mastomas.comicbookbrowser.util.ApiUtils
 import com.mastomas.comicbookbrowser.util.toListOfMarvelComics
@@ -36,4 +37,7 @@ class MarvelComicPagingSource(
             LoadResult.Error(t)
         }
     }
+
+    override fun getRefreshKey(state: PagingState<Int, MarvelComic>): Int? =
+        state.anchorPosition
 }
