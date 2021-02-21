@@ -11,7 +11,7 @@ class MarvelComicRepository(private val webService: MarvelApiWebService) {
     fun getComicsForCharacter(characterId: String) =
         Pager(
             config = PagingConfig(
-                pageSize = 25,
+                pageSize = 10,
                 maxSize = 100,
                 enablePlaceholders = false
             ),

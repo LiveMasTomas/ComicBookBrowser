@@ -8,7 +8,12 @@ import com.mastomas.comicbookbrowser.model.MarvelComic
 
 fun CharactersJson.toListOfMarvelCharacters(): List<MarvelCharacter> {
     val legal = attributionText.orEmpty()
-    return data?.results?.mapNotNull { it?.toMarvelCharacter(legal) } ?: emptyList()
+    return data?.results?.mapNotNull {
+        //making sure we only show characters that have comics available
+        if (it?.comics?.available.isGreaterThan(0)) {
+            it?.toMarvelCharacter(legal)
+        } else null
+    } ?: emptyList()
 }
 
 fun ComicJson.toListOfMarvelComics(): List<MarvelComic> {
