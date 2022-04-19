@@ -14,7 +14,6 @@ import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query
 
-@OptIn(ExperimentalSerializationApi::class)
 interface MarvelApiWebService {
 
     @GET("/v1/public/characters")
@@ -40,14 +39,16 @@ interface MarvelApiWebService {
     ): ComicJson
 
     companion object {
+
+        private val json = Json { ignoreUnknownKeys = true }
+
+        @ExperimentalSerializationApi
         fun create(): MarvelApiWebService =
             Retrofit
                 .Builder()
                 .baseUrl(BuildConfig.MARVEL_BASE_URL)
                 .addConverterFactory(
-                    Json {
-                        ignoreUnknownKeys = true
-                    }.asConverterFactory("application/json".toMediaType())
+                    json.asConverterFactory("application/json".toMediaType())
                 )
                 .build()
                 .create(MarvelApiWebService::class.java)
